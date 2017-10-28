@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Register</title>
+</head>
+<body>
+    <h2>Register</h2>
+    <h3>Become a Java Cafe member today!</h3>
+    
+    <form action="Success" method="post">
+        First name:<br>
+        <input type="text" name="firstName" value=" " required/>
+        <br>
+        Last name:<br>
+        <input type="text" name="lastName" value=" " required/>
+        <br>
+        Phone number:<br>
+        <input type="text" name="phoneNumber" value=" " />
+        <br />
+        Email Address:<br />
+        <input type="email" name="email" value=" " />
+        <br />
+        Birthday:<br />
+        <input type="date" name="birthday" value="" required/>
+        <br /><br />
+        Password:<br />
+        <input id="password" type="password" name="password" required/>
+        <br/>
+        Confirm Password:<br />
+        <input id="confirm_password" type="password" name="confirmPass" required/>
+        <br /><br />
+        Pick your favorite color:<br />
+        <input type="color" name="favColor"/>
+        <br /><br />
+        <input type="submit" value="Submit"> 
+        <input type="reset" value="Clear" />
+       
+        @*Confirming password with Javascript*@
+        <script>
+            var password = document.getElementById("password")
+                , confirm_password = document.getElementById("confirm_password");
+
+            function validatePassword() {
+                if (password.value != confirm_password.value) {
+                    confirm_password.setCustomValidity("Passwords Don't Match");
+                } else {
+                    confirm_password.setCustomValidity('');
+                }
+            }
+
+            password.onchange = validatePassword;
+            confirm_password.onkeyup = validatePassword;
+        </script>
+    </form> 
+</body>
+</html>
